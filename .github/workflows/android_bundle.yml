@@ -1,4 +1,4 @@
-name: flutter android build bundle
+name: flutter android build App Bundle
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ jobs:
           key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
           restore-keys: |
             ${{ runner.os }}-flutter-
-            
+
       - name: install flutter
         uses: subosito/flutter-action@v2
         with:
@@ -27,6 +27,6 @@ jobs:
       - name: Install dependencies
         run: flutter clean && flutter pub get
 
-      - name: Build APK
+      - name: Build bundle
         run: flutter build appbundle --release
       
