@@ -1,11 +1,11 @@
-name: flutter android build APK
+name: flutter iOS build IPA
 on:
   push:
     branches:
       - main
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2 
@@ -28,5 +28,5 @@ jobs:
         run: flutter clean && flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build ipa
       

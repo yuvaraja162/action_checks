@@ -1,4 +1,4 @@
-name: flutter android build APK
+name: flutter android build bundle
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2 
-
+      
       - name: Cache Flutter SDK
         uses: actions/cache@v3
         with:
@@ -28,5 +28,5 @@ jobs:
         run: flutter clean && flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build appbundle --release
       
